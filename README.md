@@ -29,7 +29,7 @@ Before cloning this repo, make sure you have the following installed and configu
 | Tool | Version | Purpose |
 |---|---|---|
 | [VS Code](https://code.visualstudio.com/) | Latest | IDE |
-| [Torizon IDE Extension](https://marketplace.visualstudio.com/items?itemName=toradex.torizon) | Latest | Cross-compile & deploy to board |
+| [Torizon IDE Extension](https://developer.toradex.com/torizon/application-development/ide-extension/) | Latest | Cross-compile & deploy to board |
 | [Docker Desktop](https://www.docker.com/products/docker-desktop/) | Latest | Build container images |
 | [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install) | Ubuntu recommended | Linux environment on Windows |
 | Git | Any | Version control |
@@ -207,7 +207,7 @@ The SPI node does not exist on the host.
   ```bash
   ls /dev/apalis-spi* /dev/spidev*
   ```
-- If nothing appears, the SPI interface may need to be activated via a device tree overlay. Refer to the [Toradex SPI documentation](https://developer.toradex.com/software/linux-resources/linux-features/spi-linux/) for your board.
+- If nothing appears, the SPI interface may need to be activated via a device tree overlay. Refer to the [Toradex SPI documentation](https://developer.toradex.com/linux-bsp/application-development/peripheral-access/spi-linux/) for your board.
 - Make sure you are using the correct bus (`spi1` vs `spi2`). Check which one maps to the expansion connector pins you wired.
 
 ---
@@ -235,7 +235,7 @@ The container cannot access the device.
 The bytes sent do not match the bytes received.
 
 - **No loopback wire:** The most common cause. Check that MOSI and MISO are physically bridged.
-- **Wrong pins:** Double-check the connector pinout in the [Apalis Evaluation Board datasheet](https://www.toradex.com/resources/product-resources).
+- **Wrong pins:** Double-check the connector pinout in the [Apalis Evaluation Board datasheet](https://docs.toradex.com/101028-apalis-evaluation-board-datasheet.pdf).
 - **Noise or bad contact:** Try a shorter jumper wire or a proper dupont cable.
 - **Speed too high:** Reduce `speedHz` in `main.cpp` from `500000` to `100000` and retest.
 
