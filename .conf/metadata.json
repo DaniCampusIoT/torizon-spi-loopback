@@ -1,0 +1,8 @@
+{
+    "projectName": "MemoryAccess",
+    "templateName": "cmakeConsole",
+    "containerName": "memaccess",
+    "torizonOSMajor": "7",
+    "hasCustomFields": false,
+    "customFields": []
+}

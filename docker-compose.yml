@@ -1,0 +1,32 @@
+services:
+  memaccess-debug:
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+      platforms:
+        - linux/${IMAGE_ARCH}
+    image: ${LOCAL_REGISTRY}:5002/memaccess-debug:${TAG}
+    ports:
+      - ${DEBUG_SSH_PORT}:${DEBUG_SSH_PORT}
+    profiles:
+      - debug
+    devices:
+      - "/dev/apalis-spi1-cs0:/dev/apalis-spi1-cs0"
+    device_cgroup_rules:
+      - c 253:* rmw
+      - c 199:* rmw
+
+  memaccess:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/${IMAGE_ARCH}
+    image: ${DOCKER_LOGIN}/memaccess:${TAG}
+    profiles:
+      - release
+    devices:
+      - "/dev/apalis-spi1-cs0:/dev/apalis-spi1-cs0"
+    device_cgroup_rules:
+      - c 253:* rmw
+      - c 199:* rmw
