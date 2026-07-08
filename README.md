@@ -52,7 +52,7 @@ You also need a **Toradex account** to push images to the Toradex container regi
 **Physical wiring for loopback:**  
 Connect the **MOSI** pin to the **MISO** pin on the Apalis Evaluation Board expansion connector with a short jumper wire. No slave device is needed — the master reads back its own output.
 
-> **Tip:** Check the [Apalis Evaluation Board datasheet](https://www.toradex.com/resources/product-resources?q=apalis+evaluation+board) for the exact pin numbers of MOSI and MISO on the X1/X2 expansion connectors.
+> **Tip:** Check the [Apalis Evaluation Board datasheet](https://docs.toradex.com/101028-apalis-evaluation-board-datasheet.pdf) for the exact pin numbers of MOSI and MISO on the X1/X2 expansion connectors.
 
 ---
 
